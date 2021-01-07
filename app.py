@@ -1,3 +1,4 @@
+import csv
 todos = []
 stop = False
 
@@ -6,16 +7,26 @@ def get_todos():
     return todos
 
 def add_one_task(title):
-    # your code here
-    pass
+        str_title=str(title)
+        todos.append(str_title)
+        print("tu tarea ha sido agregada")    
 
 def print_list():
     global todos
-    pass
+    print(f"Esta es la lista de tareas: Tienes {str(len(todos))} tareas")
+    count=1
+    for todo in todos:
+        print(str(count)+'. '+todo)
+        count=count+1
 
 def delete_task(number_to_delete):
-    # your code here
-    pass
+    global todos
+    new_todos=[]
+    number_to_delete=int(number_to_delete)-1
+    for i in range(0,len(todos)):
+        if i != number_to_delete:
+            new_todos.append(todos[i])
+    todos=new_todos    
 
 def save_todos():
     # your code here
