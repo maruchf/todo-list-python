@@ -71,7 +71,7 @@ def load_todos():
         todos.clear()
         for row in reader:
             print(' *****  ' .join(row))
-            todos.append(row)
+            todos.append(*row)
     # cuando imprimo los elementos cargados desde csv aparecen '' y [], esto a qué se debe?
 
 # Below this code will only run if the entry file running was app.py
